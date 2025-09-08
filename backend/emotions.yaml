@@ -1,0 +1,354 @@
+version: 1
+emotions:
+  - id: neutral
+    aliases: [baseline, normal]
+    intensity_range: [0, 1]
+    direction: "Analyze the image objectively; avoid affect."
+    emote_prompt: "Provide a clear, factual summary without emotional language."
+    reiteration_prompt: "Keep it straightforward and concise."
+    allowed_asset_types: [illustration, toon, 3d]
+    fallback_strategy: "none"
+    tts:
+      voice: "Rachel"
+      ssml_template: "<speak><prosody rate='100%' pitch='0st'>${text}</prosody></speak>"
+    nano:
+      default_task: "Intelligent Style Transfer"
+      style_tokens: ["balanced contrast", "flat lighting", "clean linework"]
+      output_size: "1024x1024"
+    live2d_params:
+      ParamMouthSmile: [0.0, 0.1]
+      ParamEyeOpen: [0.9, 1.0]
+      ParamBrowAngle: [0.0, 0.0]
+      ParamAngleX: [0, 0]
+      ParamBodyAngleZ: [0, 0]
+
+  - id: happy
+    aliases: [joy, delighted]
+    intensity_range: [0, 1]
+    direction: "Notice joyful cues: smiles, warm light, positive energy."
+    emote_prompt: "Generate a warm, enthusiastic response matching visible happiness."
+    reiteration_prompt: "Stay cheerful and welcoming."
+    allowed_asset_types: [illustration, toon, 3d]
+    fallback_strategy: "none"
+    tts:
+      voice: "Rachel"
+      ssml_template: "<speak><prosody rate='105%' pitch='+2st' volume='+1dB'>${text}</prosody></speak>"
+    nano:
+      default_task: "Intelligent Style Transfer"
+      style_tokens: ["warm highlights", "soft glow", "bright palette"]
+      output_size: "1024x1024"
+    live2d_params:
+      ParamMouthSmile: [0.4, 1.0]
+      ParamEyeOpen: [1.0, 1.0]
+      ParamBrowAngle: [0.15, 0.3]
+      ParamAngleX: [0, 5]
+      ParamBodyAngleZ: [0, 5]
+
+  - id: sadness
+    aliases: [sad, down]
+    intensity_range: [0, 1]
+    direction: "Attend to subdued cues: lowered gaze, cool tones."
+    emote_prompt: "Respond gently and empathetically; offer comfort."
+    reiteration_prompt: "Soft, slow delivery; no bright language."
+    allowed_asset_types: [illustration, toon, 3d]
+    fallback_strategy: "none"
+    tts:
+      voice: "Rachel"
+      ssml_template: "<speak><prosody rate='95%' pitch='-1st'>${text}</prosody></speak>"
+    nano:
+      default_task: "Intelligent Style Transfer"
+      style_tokens: ["cool palette", "lower contrast", "soft shadows"]
+      output_size: "1024x1024"
+    live2d_params:
+      ParamMouthSmile: [-0.4, -0.8]
+      ParamEyeOpen: [0.7, 0.5]
+      ParamBrowAngle: [-0.2, -0.35]
+      ParamAngleX: [0, -5]
+      ParamBodyAngleZ: [0, -3]
+
+  - id: anger
+    aliases: [irritation, annoyed]
+    intensity_range: [0, 1]
+    direction: "Identify tension: brows knit, jaw set."
+    emote_prompt: "Be firm and concise without aggression; de-escalate."
+    reiteration_prompt: "Controlled energy; avoid insults."
+    allowed_asset_types: [illustration, toon, 3d]
+    fallback_strategy: "tone_down_if_high_intensity"
+    tts:
+      voice: "Antoni"
+      ssml_template: "<speak><prosody rate='102%' pitch='-1st' volume='+2dB'>${text}</prosody></speak>"
+    nano:
+      default_task: "Intelligent Style Transfer"
+      style_tokens: ["higher contrast", "hard rim light", "deeper reds"]
+      output_size: "1024x1024"
+    live2d_params:
+      ParamMouthSmile: [-0.2, -0.6]
+      ParamEyeOpen: [0.9, 0.8]
+      ParamBrowAngle: [-0.25, -0.5]
+      ParamAngleX: [0, 8]
+      ParamBodyAngleZ: [0, 6]
+
+  - id: fear
+    aliases: [anxiety, nervous]
+    intensity_range: [0, 1]
+    direction: "Look for tension and vigilance; widened eyes."
+    emote_prompt: "Reassure; provide simple next steps."
+    reiteration_prompt: "Short sentences; calming words."
+    allowed_asset_types: [illustration, toon, 3d]
+    fallback_strategy: "tone_down_if_high_intensity"
+    tts:
+      voice: "Rachel"
+      ssml_template: "<speak><prosody rate='98%' pitch='-0.5st'><break time='80ms'/>${text}</prosody></speak>"
+    nano:
+      default_task: "Intelligent Style Transfer"
+      style_tokens: ["cool blues", "subtle vignetting", "soft contrast"]
+      output_size: "1024x1024"
+    live2d_params:
+      ParamMouthSmile: [-0.1, -0.3]
+      ParamEyeOpen: [1.0, 1.0]
+      ParamBrowAngle: [0.1, -0.1]
+      ParamAngleX: [0, -5]
+      ParamBodyAngleZ: [0, -2]
+
+  - id: surprise
+    aliases: [astonished, wow]
+    intensity_range: [0, 1]
+    direction: "Focus on abrupt change; raised brows, open mouth."
+    emote_prompt: "Brief, upbeat exclamation then context."
+    reiteration_prompt: "Keep it short; don’t overdo."
+    allowed_asset_types: [illustration, toon, 3d]
+    fallback_strategy: "none"
+    tts:
+      voice: "Rachel"
+      ssml_template: "<speak><prosody rate='108%' pitch='+3st'>${text}</prosody></speak>"
+    nano:
+      default_task: "Intelligent Style Transfer"
+      style_tokens: ["spark highlights", "higher brightness", "crisp edges"]
+      output_size: "1024x1024"
+    live2d_params:
+      ParamMouthSmile: [0.2, 0.4]
+      ParamEyeOpen: [1.0, 1.0]
+      ParamBrowAngle: [0.25, 0.35]
+      ParamAngleX: [0, 6]
+      ParamBodyAngleZ: [0, 6]
+
+  - id: disgust
+    aliases: [grossed_out]
+    intensity_range: [0, 1]
+    direction: "Upper-lip raise, nose wrinkle; aversion."
+    emote_prompt: "Acknowledge aversion; pivot to constructive guidance."
+    reiteration_prompt: "Keep it measured; avoid ridicule."
+    allowed_asset_types: [illustration, toon, 3d]
+    fallback_strategy: "tone_down_if_high_intensity"
+    tts:
+      voice: "Antoni"
+      ssml_template: "<speak><prosody rate='98%' pitch='-1st'>${text}</prosody></speak>"
+    nano:
+      default_task: "Intelligent Style Transfer"
+      style_tokens: ["desaturated greens", "lower saturation", "cool tint"]
+      output_size: "1024x1024"
+    live2d_params:
+      ParamMouthSmile: [-0.3, -0.6]
+      ParamEyeOpen: [0.8, 0.7]
+      ParamBrowAngle: [-0.15, -0.3]
+      ParamAngleX: [0, -4]
+      ParamBodyAngleZ: [0, -2]
+
+  - id: interest
+    aliases: [curiosity, engaged]
+    intensity_range: [0, 1]
+    direction: "Attune to engagement cues; lean-in gaze."
+    emote_prompt: "Ask one clarifying question; mirror user’s topic."
+    reiteration_prompt: "Stay lively and specific."
+    allowed_asset_types: [illustration, toon, 3d]
+    fallback_strategy: "none"
+    tts:
+      voice: "Rachel"
+      ssml_template: "<speak><prosody rate='103%' pitch='+1st'>${text}</prosody></speak>"
+    nano:
+      default_task: "Intelligent Style Transfer"
+      style_tokens: ["subtle rim light", "clean contrast", "accent color pops"]
+      output_size: "1024x1024"
+    live2d_params:
+      ParamMouthSmile: [0.2, 0.5]
+      ParamEyeOpen: [1.0, 0.95]
+      ParamBrowAngle: [0.1, 0.2]
+      ParamAngleX: [0, 4]
+      ParamBodyAngleZ: [0, 2]
+
+  - id: confusion
+    aliases: [puzzled, unsure]
+    intensity_range: [0, 1]
+    direction: "Furrowed brow; hesitations."
+    emote_prompt: "State what’s unclear; propose two options."
+    reiteration_prompt: "Keep it light; avoid blame."
+    allowed_asset_types: [illustration, toon, 3d]
+    fallback_strategy: "none"
+    tts:
+      voice: "Rachel"
+      ssml_template: "<speak><prosody rate='98%' pitch='0st'>${text}</prosody></speak>"
+    nano:
+      default_task: "Intelligent Style Transfer"
+      style_tokens: ["neutral palette", "soft contrast", "muted edges"]
+      output_size: "1024x1024"
+    live2d_params:
+      ParamMouthSmile: [-0.05, 0.0]
+      ParamEyeOpen: [0.85, 0.8]
+      ParamBrowAngle: [-0.1, 0.1]
+      ParamAngleX: [0, -3]
+      ParamBodyAngleZ: [0, -1]
+
+  - id: affection
+    aliases: [warmth, caring]
+    intensity_range: [0, 1]
+    direction: "Soft eyes, gentle smile."
+    emote_prompt: "Offer warmth and positive regard; keep it brief."
+    reiteration_prompt: "Kind, not saccharine."
+    allowed_asset_types: [illustration, toon, 3d]
+    fallback_strategy: "none"
+    tts:
+      voice: "Rachel"
+      ssml_template: "<speak><prosody rate='100%' pitch='+1st'>${text}</prosody></speak>"
+    nano:
+      default_task: "Intelligent Style Transfer"
+      style_tokens: ["soft pink highlights", "subtle bloom", "warm shadows"]
+      output_size: "1024x1024"
+    live2d_params:
+      ParamMouthSmile: [0.5, 0.9]
+      ParamEyeOpen: [0.95, 0.9]
+      ParamBrowAngle: [0.15, 0.25]
+      ParamAngleX: [0, 2]
+      ParamBodyAngleZ: [0, 2]
+
+  # SOCIAL/INTERACTION EXTRAS (for richer UX)
+  - id: confidence
+    aliases: [assured]
+    intensity_range: [0, 1]
+    direction: "Steady posture; composed tone."
+    emote_prompt: "Deliver clear, solution-forward guidance."
+    reiteration_prompt: "Avoid arrogance; stay helpful."
+    allowed_asset_types: [illustration, toon, 3d]
+    fallback_strategy: "none"
+    tts:
+      voice: "Antoni"
+      ssml_template: "<speak><prosody rate='102%' pitch='+0.5st' volume='+1dB'>${text}</prosody></speak>"
+    nano:
+      default_task: "Intelligent Style Transfer"
+      style_tokens: ["crisp contrast", "clean key light", "subtle vignette"]
+      output_size: "1024x1024"
+    live2d_params:
+      ParamMouthSmile: [0.15, 0.35]
+      ParamEyeOpen: [1.0, 0.95]
+      ParamBrowAngle: [0.05, 0.15]
+      ParamAngleX: [0, 3]
+      ParamBodyAngleZ: [0, 3]
+
+  - id: playful
+    aliases: [teasing, mischievous]
+    intensity_range: [0, 1]
+    direction: "Light mischief cues; sparkle in eyes."
+    emote_prompt: "Witty, friendly remark; keep it kind."
+    reiteration_prompt: "No snark; stay safe."
+    allowed_asset_types: [illustration, toon, 3d]
+    fallback_strategy: "none"
+    tts:
+      voice: "Rachel"
+      ssml_template: "<speak><prosody rate='106%' pitch='+2st'>${text}</prosody></speak>"
+    nano:
+      default_task: "Intelligent Style Transfer"
+      style_tokens: ["bright accents", "specular pops", "cartoon sparkle"]
+      output_size: "1024x1024"
+    live2d_params:
+      ParamMouthSmile: [0.4, 0.8]
+      ParamEyeOpen: [0.9, 0.9]
+      ParamBrowAngle: [0.2, 0.3]
+      ParamAngleX: [0, 6]
+      ParamBodyAngleZ: [0, 6]
+
+  - id: embarrassed
+    aliases: [shy, bashful]
+    intensity_range: [0, 1]
+    direction: "Averted gaze; blush tones."
+    emote_prompt: "Gentle, self-effacing; keep sentences short."
+    reiteration_prompt: "Light warmth; no self-criticism."
+    allowed_asset_types: [illustration, toon, 3d]
+    fallback_strategy: "none"
+    tts:
+      voice: "Rachel"
+      ssml_template: "<speak><prosody rate='96%' pitch='-0.5st'><break time='60ms'/>${text}</prosody></speak>"
+    nano:
+      default_task: "Intelligent Style Transfer"
+      style_tokens: ["subtle blush", "soft pinks", "low contrast"]
+      output_size: "1024x1024"
+    live2d_params:
+      ParamMouthSmile: [0.1, 0.3]
+      ParamEyeOpen: [0.85, 0.8]
+      ParamBrowAngle: [0.05, -0.05]
+      ParamAngleX: [0, -4]
+      ParamBodyAngleZ: [0, -2]
+
+  - id: determined
+    aliases: [resolute, focused]
+    intensity_range: [0, 1]
+    direction: "Focused gaze; set jaw."
+    emote_prompt: "State plan + next step clearly."
+    reiteration_prompt: "Keep tempo steady and purposeful."
+    allowed_asset_types: [illustration, toon, 3d]
+    fallback_strategy: "none"
+    tts:
+      voice: "Antoni"
+      ssml_template: "<speak><prosody rate='101%' pitch='0st' volume='+1dB'>${text}</prosody></speak>"
+    nano:
+      default_task: "Intelligent Style Transfer"
+      style_tokens: ["directional key light", "cool neutrals", "firm contrast"]
+      output_size: "1024x1024"
+    live2d_params:
+      ParamMouthSmile: [0.0, 0.2]
+      ParamEyeOpen: [1.0, 0.95]
+      ParamBrowAngle: [0.1, 0.2]
+      ParamAngleX: [0, 4]
+      ParamBodyAngleZ: [0, 2]
+
+  - id: bored
+    aliases: [disengaged]
+    intensity_range: [0, 1]
+    direction: "Low energy; flattened affect."
+    emote_prompt: "Brief, neutral response; ask if user wants to switch topics."
+    reiteration_prompt: "Keep it polite."
+    allowed_asset_types: [illustration, toon, 3d]
+    fallback_strategy: "none"
+    tts:
+      voice: "Antoni"
+      ssml_template: "<speak><prosody rate='95%' pitch='-1st'>${text}</prosody></speak>"
+    nano:
+      default_task: "Intelligent Style Transfer"
+      style_tokens: ["desaturated palette", "soft flat light", "low contrast"]
+      output_size: "1024x1024"
+    live2d_params:
+      ParamMouthSmile: [-0.2, -0.3]
+      ParamEyeOpen: [0.75, 0.7]
+      ParamBrowAngle: [-0.05, -0.15]
+      ParamAngleX: [0, -2]
+      ParamBodyAngleZ: [0, -1]
+
+  - id: relief
+    aliases: [reassured]
+    intensity_range: [0, 1]
+    direction: "Exhale; tension drop."
+    emote_prompt: "Acknowledge improvement; close the loop positively."
+    reiteration_prompt: "Calm, balanced cadence."
+    allowed_asset_types: [illustration, toon, 3d]
+    fallback_strategy: "none"
+    tts:
+      voice: "Rachel"
+      ssml_template: "<speak><prosody rate='100%' pitch='+0.5st'><break time='80ms'/>${text}</prosody></speak>"
+    nano:
+      default_task: "Intelligent Style Transfer"
+      style_tokens: ["warmer mids", "gentle bloom", "open shadows"]
+      output_size: "1024x1024"
+    live2d_params:
+      ParamMouthSmile: [0.2, 0.6]
+      ParamEyeOpen: [0.95, 0.95]
+      ParamBrowAngle: [0.1, 0.2]
+      ParamAngleX: [0, 2]
+      ParamBodyAngleZ: [0, 2]

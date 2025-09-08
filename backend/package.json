@@ -1,0 +1,21 @@
+{
+  "name": "goodai-avatar-wrapper-backend",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "start": "node app/main.js",
+    "dev": "node --watch app/main.js"
+  },
+  "dependencies": {
+    "express": "^4.19.2",
+    "cors": "^2.8.5",
+    "@google/generative-ai": "^0.17.0",
+    "@google-cloud/storage": "^7.12.1",
+    "@google-cloud/vision": "^4.3.1",
+    "@anthropic-ai/sdk": "^0.27.1",
+    "openai": "^4.52.7",
+    "node-fetch": "^3.3.2",
+    "js-yaml": "^4.1.0"
+  }
+}

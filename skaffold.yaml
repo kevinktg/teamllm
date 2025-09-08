@@ -1,0 +1,20 @@
+apiVersion: skaffold/v4beta11
+kind: Config
+metadata:
+  name: team-llm
+build:
+  artifacts:
+  - image: gcr.io/goodai-470413/team-llm-backend
+    context: backend
+    docker:
+      dockerfile: Dockerfile
+  - image: gcr.io/goodai-470413/team-llm-ui
+    context: ui
+    docker:
+      dockerfile: Dockerfile
+  googleCloudBuild:
+    projectId: goodai-470413
+deploy:
+  cloudrun:
+    projectid: goodai-470413
+    region: us-central1

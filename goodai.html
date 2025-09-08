@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>good.ai.au | Strategic Vision for WA SMEs</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;900&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+        .chart-container {
+            position: relative;
+            width: 100%;
+            max-width: 500px;
+            margin-left: auto;
+            margin-right: auto;
+            height: 300px;
+            max-height: 400px;
+        }
+        @media (min-width: 768px) {
+            .chart-container {
+                height: 350px;
+            }
+        }
+    </style>
+</head>
+<body class="bg-[#E1F5C4] text-gray-800">
+
+    <div class="container mx-auto p-4 md:p-8">
+
+        <header class="text-center my-12">
+            <h1 class="text-4xl md:text-6xl font-black text-[#FF4E50]">good.ai.au</h1>
+            <p class="mt-4 text-xl md:text-2xl font-light text-gray-700">The Strategic AI Integrator for Perth's SME Landscape</p>
+        </header>
+
+        <main class="space-y-12">
+            
+            <section id="problem" class="bg-white rounded-lg shadow-lg p-6 md:p-8">
+                <h2 class="text-2xl md:text-3xl font-bold text-[#FC913A] mb-4 text-center">The Untapped Opportunity: The "Ad-Hoc Experimenter"</h2>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
+                    <div>
+                        <p class="text-base md:text-lg leading-relaxed">
+                            The Western Australian SME market is at a critical juncture. While many businesses have started using AI, this adoption is shallow. A vast majority are "Ad-Hoc Experimenters," using tools like ChatGPT without a coherent strategy. This creates a significant "strategy gap," preventing them from achieving transformative growth and leaving a substantial market opportunity for a specialized guide.
+                        </p>
+                    </div>
+                    <div class="flex flex-col items-center">
+                         <div class="chart-container">
+                            <canvas id="strategyGapChart"></canvas>
+                        </div>
+                        <p class="mt-4 text-center font-semibold text-gray-600">Australian SMBs using AI without a formal strategy.</p>
+                    </div>
+                </div>
+            </section>
+
+            <section id="market-size" class="bg-white rounded-lg shadow-lg p-6 md:p-8">
+                <h2 class="text-2xl md:text-3xl font-bold text-[#FC913A] mb-4 text-center">Sizing the Perth AI Market</h2>
+                <p class="text-center max-w-3xl mx-auto text-base md:text-lg mb-8">A bottom-up analysis reveals a multi-billion dollar addressable market for AI services in Perth. GoodAI's initial focus is on capturing a obtainable slice of this market by providing high-value, strategic integration services.</p>
+                <div class="chart-container max-w-4xl">
+                    <canvas id="marketSizeChart"></canvas>
+                </div>
+            </section>
+            
+            <section id="solution" class="bg-white rounded-lg shadow-lg p-6 md:p-8">
+                <h2 class="text-2xl md:text-3xl font-bold text-[#FC913A] mb-6 text-center">The Solution: The Strategic Integrator</h2>
+                <p class="text-center max-w-3xl mx-auto text-base md:text-lg mb-8">GoodAI fills a critical gap in the market, bridging the divide between expensive, enterprise-level consultants and generic, impersonal tech platforms. We provide the "how-to" for SMEs to leverage AI effectively within their local business context.</p>
+                <div class="flex flex-col md:flex-row items-center justify-center space-y-4 md:space-y-0 md:space-x-4">
+                    <div class="text-center p-4 border-2 border-dashed border-gray-300 rounded-lg">
+                        <h3 class="text-xl font-bold text-gray-500">Big Four Consultancies</h3>
+                        <p class="text-gray-500">Enterprise-Focused & High Cost</p>
+                    </div>
+                    <div class="text-2xl font-bold text-[#FF4E50] p-4 animate-pulse">
+                        &lt;--- GAP ---&gt;
+                    </div>
+                    <div class="relative text-center p-6 bg-[#FF4E50] text-white rounded-xl shadow-2xl">
+                        <div class="absolute -top-3 -right-3 h-8 w-8 bg-[#F9D423] rounded-full flex items-center justify-center text-white text-xl font-bold">★</div>
+                        <h3 class="text-2xl font-extrabold">good.ai.au</h3>
+                        <p class="font-medium">Strategic, Cost-Efficient & SME-Focused</p>
+                    </div>
+                     <div class="text-2xl font-bold text-[#FF4E50] p-4 animate-pulse">
+                        &lt;--- GAP ---&gt;
+                    </div>
+                    <div class="text-center p-4 border-2 border-dashed border-gray-300 rounded-lg">
+                        <h3 class="text-xl font-bold text-gray-500">Generic Tech Giants</h3>
+                        <p class="text-gray-500">Powerful Tools, No Strategic Guidance</p>
+                    </div>
+                </div>
+            </section>
+
+            <section id="services" class="bg-white rounded-lg shadow-lg p-6 md:p-8">
+                <h2 class="text-2xl md:text-3xl font-bold text-[#FC913A] mb-8 text-center">Core Service Offerings</h2>
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-8 text-center">
+                    <div class="bg-gray-50 p-6 rounded-lg border-l-4 border-[#FF4E50]">
+                        <p class="text-5xl mb-4">🎨</p>
+                        <h3 class="text-xl font-bold mb-2">AI-Assisted Creative Assets</h3>
+                        <p>Productized branding kits and personalized storybooks designed for the SME market, delivering high-quality creative work at scale.</p>
+                    </div>
+                    <div class="bg-gray-50 p-6 rounded-lg border-l-4 border-[#FC913A]">
+                        <p class="text-5xl mb-4">💡</p>
+                        <h3 class="text-xl font-bold mb-2">Expert Prompt Engineering</h3>
+                        <p>High-value freelance services for a global market to generate initial revenue and build a reputation for technical excellence.</p>
+                    </div>
+                    <div class="bg-gray-50 p-6 rounded-lg border-l-4 border-[#F9D423]">
+                        <p class="text-5xl mb-4">🤝</p>
+                        <h3 class="text-xl font-bold mb-2">Digital Sovereignty Partnerships</h3>
+                        <p>Co-designing "Digital Keeping Places" for First Nations communities, focusing on empowerment and ethical data control.</p>
+                    </div>
+                </div>
+            </section>
+
+            <section id="strategy" class="bg-white rounded-lg shadow-lg p-6 md:p-8">
+                <h2 class="text-2xl md:text-3xl font-bold text-[#FC913A] mb-8 text-center">A Three-Phase Growth Strategy</h2>
+                <div class="relative border-l-4 border-[#FC913A] ml-6 md:ml-0 md:border-l-0 md:border-t-4 md:flex">
+                    <div class="mb-8 ml-8 md:ml-0 md:mb-0 md:w-1/3 md:pr-8 md:border-r-4 md:border-t-0 border-[#FC913A]">
+                        <div class="absolute -left-4 -top-1.5 md:top-auto md:-top-4 md:left-auto h-8 w-8 rounded-full bg-[#FF4E50] text-white flex items-center justify-center font-bold">1</div>
+                        <h3 class="text-xl font-bold text-[#FF4E50] mb-2">Phase 1: Validation & Cash Flow</h3>
+                        <p class="text-gray-700">Focus on high-value prompt engineering services to generate immediate revenue. Bootstrap operations using an AI-augmented solo founder model. Secure initial SME clients for creative asset packages.</p>
+                    </div>
+                    <div class="mb-8 ml-8 md:ml-0 md:mb-0 md:w-1/3 md:px-8 md:border-r-4 md:border-t-0 border-[#FC913A]">
+                         <div class="absolute -left-4 top-[calc(33.33%+1rem)] md:top-auto md:-top-4 md:left-auto h-8 w-8 rounded-full bg-[#FC913A] text-white flex items-center justify-center font-bold">2</div>
+                        <h3 class="text-xl font-bold text-[#FC913A] mb-2">Phase 2: Scale & Team Growth</h3>
+                        <p class="text-gray-700">Secure a $200k capital injection to hire a freelance marketer and expand service capacity. Systematize the "strategic integrator" process and build a repeatable sales funnel. Begin initial First Nations partnership outreach.</p>
+                    </div>
+                    <div class="ml-8 md:ml-0 md:w-1/3 md:pl-8">
+                         <div class="absolute -left-4 top-[calc(66.66%+2rem)] md:top-auto md:-top-4 md:left-auto h-8 w-8 rounded-full bg-[#F9D423] text-white flex items-center justify-center font-bold">3</div>
+                        <h3 class="text-xl font-bold text-[#F9D423] mb-2">Phase 3: Social Impact & Legacy</h3>
+                        <p class="text-gray-700">Focus on the Digital Sovereignty partnerships as a core business pillar. Co-create "Digital Keeping Places" and explore long-term, community-controlled AI language models. Establish GoodAI as a leader in ethical AI and social impact.</p>
+                    </div>
+                </div>
+            </section>
+        </main>
+
+        <footer class="text-center mt-16 pb-8">
+             <p class="text-gray-600">A new era of strategic AI for Western Australia.</p>
+        </footer>
+
+    </div>
+
+    <script>
+        const processLabels = (labels) => {
+            return labels.map(label => {
+                if (typeof label === 'string' && label.length > 16) {
+                    const words = label.split(' ');
+                    const lines = [];
+                    let currentLine = '';
+                    words.forEach(word => {
+                        if ((currentLine + word).length > 16) {
+                            lines.push(currentLine.trim());
+                            currentLine = '';
+                        }
+                        currentLine += word + ' ';
+                    });
+                    lines.push(currentLine.trim());
+                    return lines;
+                }
+                return label;
+            });
+        };
+        
+        const tooltipTitleCallback = {
+            plugins: {
+                tooltip: {
+                    callbacks: {
+                        title: function(tooltipItems) {
+                            const item = tooltipItems[0];
+                            let label = item.chart.data.labels[item.dataIndex];
+                            if (Array.isArray(label)) {
+                              return label.join(' ');
+                            } else {
+                              return label;
+                            }
+                        }
+                    }
+                }
+            }
+        };
+
+        const strategyGapCtx = document.getElementById('strategyGapChart').getContext('2d');
+        new Chart(strategyGapCtx, {
+            type: 'doughnut',
+            data: {
+                labels: ['Ad-Hoc Experimenters', 'Strategic Adopters'],
+                datasets: [{
+                    label: '% of SMBs',
+                    data: [85, 15],
+                    backgroundColor: [
+                        '#FC913A',
+                        '#E1F5C4'
+                    ],
+                    borderColor: [
+                        '#FFFFFF',
+                        '#FFFFFF'
+                    ],
+                    borderWidth: 4
+                }]
+            },
+            options: {
+                responsive: true,
+                maintainAspectRatio: false,
+                plugins: {
+                    ...tooltipTitleCallback.plugins,
+                    legend: {
+                        position: 'bottom',
+                    },
+                    title: {
+                        display: true,
+                        text: 'AI Adoption Strategy Gap',
+                        font: { size: 16 }
+                    }
+                },
+                cutout: '70%'
+            }
+        });
+        
+        const marketSizeCtx = document.getElementById('marketSizeChart').getContext('2d');
+        const marketLabels = ['Total Addressable Market (TAM)', 'Serviceable Addressable Market (SAM)', 'Serviceable Obtainable Market (SOM)'];
+        new Chart(marketSizeCtx, {
+            type: 'bar',
+            data: {
+                labels: processLabels(marketLabels),
+                datasets: [{
+                    label: 'Market Size (AU$ in Billions)',
+                    data: [3.81, 1.22, 0.0061],
+                    backgroundColor: [
+                        '#FF4E50',
+                        '#FC913A',
+                        '#F9D423'
+                    ],
+                    borderColor: [
+                        '#FF4E50',
+                        '#FC913A',
+                        '#F9D423'
+                    ],
+                    borderWidth: 1
+                }]
+            },
+            options: {
+                responsive: true,
+                maintainAspectRatio: false,
+                 ...tooltipTitleCallback,
+                scales: {
+                    y: {
+                        beginAtZero: true,
+                        type: 'logarithmic',
+                        ticks: {
+                           callback: function(value, index, values) {
+                                if (value === 10 || value === 1 || value === 0.1 || value === 0.01 || value === 0.001) {
+                                    return '$' + value + 'B'
+                                }
+                           }
+                        },
+                         title: {
+                            display: true,
+                            text: 'Value in AU$ Billions (Log Scale)'
+                        }
+                    }
+                },
+                plugins: {
+                     ...tooltipTitleCallback.plugins,
+                    legend: {
+                        display: false
+                    },
+                    title: {
+                        display: true,
+                        text: 'Perth SME AI Consulting Market Size',
+                        font: { size: 18 }
+                    }
+                }
+            }
+        });
+
+    </script>
+</body>
+</html>
